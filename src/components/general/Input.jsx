@@ -128,7 +128,7 @@ export default class Input extends React.Component {
                     if (e && e.target && e.target.scrollTop && e.target.scrollHeight) {
                       this.scrollLocation = e.target.scrollTop / e.target.scrollHeight;
                     }
-                  }: false}
+                  }: undefined}
                   onMouseLeave={()=> {
                     if (props.onCancelAdd) {
                       props.onCancelAdd();

@@ -35,7 +35,7 @@ export default class Column extends React.Component {
         className={props.class ? `column ${props.class}` : 'column'}
         onMouseUp={props.onMouseUp ? (e)=>{
           props.onMouseUp(e);
-        }: false}
+        }: undefined}
         onClickCapture={(e)=>{
           if (props.onClick) {
             props.onClick(e);

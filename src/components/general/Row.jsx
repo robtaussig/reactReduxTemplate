@@ -28,7 +28,7 @@ export default class Row extends React.Component {
         className={props.class ? `row ${props.class}` : 'row'}
         onMouseLeave={props.onMouseLeave ? ()=>{
           props.onMouseLeave();
-        }: false}
+        }: undefined}
       >
         {props.children}
       </div>

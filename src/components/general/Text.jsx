@@ -43,7 +43,7 @@ export default class Text extends React.Component {
           title={props.label || _value}
           onClick={props.onClick ? ()=>{
             props.onClick(_value);
-          } : false}
+          } : undefined}
         >
           {_value}
         </div>
@@ -55,7 +55,7 @@ export default class Text extends React.Component {
           className={_customClass}           
           onClick={props.onClick ? ()=>{
             props.onClick(_value);
-          } : false}
+          } : undefined}
         >
           {_value}
         </div>
