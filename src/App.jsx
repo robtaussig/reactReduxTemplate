@@ -2,6 +2,7 @@ import React from 'react';
 import { templateAsyncAction } from './actions/appActions.js';
 import { connect } from 'react-redux';
 import './App.css';
+
 export class App extends React.Component {
   constructor(props) {
     super(props);
@@ -19,8 +20,8 @@ export class App extends React.Component {
   render () {
 
     return (
-      <div>
-        
+      <div className={'app'}>
+
       </div>
     );
   }
