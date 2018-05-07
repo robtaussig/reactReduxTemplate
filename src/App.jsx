@@ -1,26 +1,43 @@
 import React from 'react';
-import Row from './components/general/Row.jsx';
-import Column from './components/general/Column.jsx';
-import Text from './components/general/Text.jsx';
-import Input from './components/general/Input.jsx';
-import Image from './components/general/Image.jsx';
+import { templateAsyncAction } from './actions/appActions.js';
 import { connect } from 'react-redux';
 import './App.css';
-
-
-class App extends React.Component {
+export class App extends React.Component {
   constructor(props) {
     super(props);
 
   }
 
-  render() {
+  componentDidMount() {
+    
+  }
+
+  componentWillUnmount() {
+    
+  }
+
+  render () {
+
     return (
-      <Row>
-        {this.props.children}
-      </Row>
+      <div>
+        
+      </div>
     );
   }
 }
 
-export default connect(state => state)(App);
+const mapStateToProps = (state, ownProps) => {
+  return {
+    app: state.app
+  };
+}
+
+const mapDispatchToProps = (dispatch, ownProps) => {
+  return {
+    templateAction: (data) => {
+      dispatch(templateAsyncAction(data));
+    }
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
