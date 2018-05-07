@@ -1,20 +1,26 @@
-import * as ActionTypes from './actionTypes.js';
+import {
+  TemplatePostRequest,
+  TemplatePostResponseSuccess,
+  TemplatePostResponseError,
+  TemplateSync,
+} from './actionTypes.js';
 import AsyncAction from './asyncAction.js';
+import SyncAction from './syncAction.js';
 import { browserHistory } from 'react-router';
 import axios from 'axios';
 
-export function templateAsyncAction(csrfToken) {
+export function templateAsyncAction() {
   return dispatch => {
     dispatch(templateAsyncPostRequestAction());
     return axios.post(`/`, {
-      _csrf: csrfToken
+      
     })
     .then(response => {
       if (response.data.error) {
-        dispatch(templateAsyncPostResponseErrorAction(response.data.error, response.headers[Constants.ResponseHeaderCsrfToken]));
+        dispatch(templateAsyncPostResponseErrorAction(response.data.error));
       }
       else {
-        dispatch(templateAsyncPostResponseSuccessAction(response.headers[Constants.ResponseHeaderCsrfToken]));
+        dispatch(templateAsyncPostResponseSuccessAction());
       }
     })
     .catch(error => {
@@ -25,31 +31,31 @@ export function templateAsyncAction(csrfToken) {
 
 function templateAsyncPostRequestAction() {
   return new AsyncAction(
-    ActionTypes.TemplatePostRequest,
-    ActionTypes.TemplatePostRequest,
+    TemplatePostRequest,
+    TemplatePostRequest,
     true, false
   );
 }
 
-function templateAsyncPostResponseSuccessAction(csrfToken) {
+function templateAsyncPostResponseSuccessAction() {
   return new AsyncAction(
-    ActionTypes.TemplatePostResponseSuccess,
-    ActionTypes.TemplatePostRequest,
-    false, false, { csrfToken }
+    TemplatePostResponseSuccess,
+    TemplatePostRequest,
+    false, false, {}
   );
 }
 
-function templateAsyncPostResponseErrorAction(error, csrfToken) {
+function templateAsyncPostResponseErrorAction(error) {
   return new AsyncAction(
-    ActionTypes.TemplatePostResponseError,
-    ActionTypes.TemplatePostRequest,
-    false, false, { error, csrfToken }
+    TemplatePostResponseError,
+    TemplatePostRequest,
+    false, false, { error }
   );
 }
 
 export function templateSyncAction(data) {
-  return {
-    type: ActionTypes.TemplateSync,
-    data
-  };
+  return new SyncAction(
+    TemplateSync,
+    { data }
+  );
 }

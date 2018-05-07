@@ -1,5 +1,5 @@
 export default class AsyncAction {
-  constructor(type, requestStatusKey, isRequesting, didInvalidate, keyValues = {}) {
+  constructor(type, requestStatusKey, isRequesting, didInvalidate, data = {}) {
     return {
       type,
       requestStatusKey,
@@ -7,7 +7,7 @@ export default class AsyncAction {
         isRequesting,
         didInvalidate
       },
-      ...keyValues
+      ...data
     };
   }
 }
