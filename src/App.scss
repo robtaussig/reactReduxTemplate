@@ -12,24 +12,23 @@ span, article, footer, time, small {
   text-align: inherit;
   text-decoration: inherit;
   vertical-align: inherit;
-  box-sizing: inherit;
   background: transparent;
   font-family: "Avenir", "HelveticaNeue-Light", "Helvetica Neue Light",
   "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 }
 
-*, *:after, *:before {
+body {
+  box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
-  box-sizing: border-box;
 }
 
-.column {
-  flex-basis: 100%;
+*, *:after, *:before {
+  box-sizing: inherit;
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
 }
 
 @media screen and (min-width: 300px) {
-  .column {
-    flex: 1;
-  }
+
 }
