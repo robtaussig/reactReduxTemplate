@@ -1,7 +1,7 @@
 {
   "name": "react-redux-bp",
   "description": "A minimalistic template for starting a React-Redux application.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "homepage": "https://github.com/robtaussig/reactReduxTemplate",
   "license": "MIT",
   "keywords": [
