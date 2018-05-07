@@ -1,7 +1,12 @@
 {
-  "name": "autocorrect",
-  "version": "0.1.0",
-  "private": true,
+  "name": "react-redux-bp",
+  "version": "1.0.0",
+  "private": false,
+  "author": {
+    "email": "robert.taussig@gmail.com",
+    "name": "Robert Taussig",
+    "url": "https://www.robtaussig.com"
+  },
   "dependencies": {
     "axios": "^0.17.1",
     "node-sass-chokidar": "^0.0.3",
